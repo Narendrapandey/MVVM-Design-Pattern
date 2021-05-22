@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="EN_Location" representedClassName="EN_Location" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="vehicleId" optional="YES" attributeType="String"/>
+        <relationship name="locationOfVehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EN_VehicleList" inverseName="vehicleToVehicleLocation" inverseEntity="EN_VehicleList"/>
+    </entity>
+    <entity name="EN_VehicleDetail" representedClassName="EN_VehicleDetail" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="fuel_level" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fuel_type" optional="YES" attributeType="String"/>
+        <attribute name="make" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="series" optional="YES" attributeType="String"/>
+        <attribute name="transmission" optional="YES" attributeType="String"/>
+        <attribute name="vehicleId" optional="YES" attributeType="String"/>
+        <relationship name="vehicleDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EN_VehicleList" inverseName="vehicleToVehicleDetail" inverseEntity="EN_VehicleList"/>
+    </entity>
+    <entity name="EN_VehicleList" representedClassName="EN_VehicleList" syncable="YES">
+        <attribute name="carImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="group" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="innerCleanliness" optional="YES" attributeType="String"/>
+        <attribute name="licensePlate" optional="YES" attributeType="String"/>
+        <attribute name="modelIdentifier" optional="YES" attributeType="String"/>
+        <attribute name="modelName" optional="YES" attributeType="String"/>
+        <relationship name="vehicleToVehicleDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EN_VehicleDetail" inverseName="vehicleDetails" inverseEntity="EN_VehicleDetail"/>
+        <relationship name="vehicleToVehicleLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EN_Location" inverseName="locationOfVehicle" inverseEntity="EN_Location"/>
+    </entity>
+    <elements>
+        <element name="EN_VehicleList" positionX="145.7344970703125" positionY="-265.6064605712891" width="128" height="178"/>
+        <element name="EN_VehicleDetail" positionX="325.2066650390625" positionY="-109.3831176757812" width="128" height="178"/>
+        <element name="EN_Location" positionX="-29.23370361328125" positionY="-56.24082946777344" width="128" height="103"/>
+    </elements>
+</model>
