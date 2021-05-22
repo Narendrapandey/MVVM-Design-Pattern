@@ -17,8 +17,8 @@ class Environment {
     // MARK: - Variables -
     static let server: Server    =   .staging
     
-    static let staging = "http://www.mocky.io"
-    static let production = "http://www.mocky.io"
+    static let staging = "https://run.mocky.io"
+    static let production = "https://run.mocky.io"
     
     // MARK: - main Base Path -
     class func mainBasePath() -> String {

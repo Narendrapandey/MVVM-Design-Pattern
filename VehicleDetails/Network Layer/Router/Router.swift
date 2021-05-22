@@ -21,7 +21,7 @@ extension Router {
         switch self{
         
         case .getVehicleList:
-            return URL(string: Environment.APIBasePath() + "/v2/5dc3f2c13000003c003477a0")!
+            return URL(string: Environment.APIBasePath() + "/v3/1322e4fb-d566-480a-aead-b3165427c308")!
         }
     }
 }
